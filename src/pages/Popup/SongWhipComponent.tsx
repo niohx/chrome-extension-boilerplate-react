@@ -1,12 +1,22 @@
+import { CopyOutlined } from "@ant-design/icons";
+import { Button, Spin } from "antd";
 import React, { VFC } from "react";
+import useSongWhip from "./useSongWhip";
 
-const isSpotify=(url:string)=>{
-    let isSpotify:boolean =((url:string)=>url.includes('https://open.spotify.com/track/'))(url)
-    return isSpotify;
-}
+
 
 const SongWhipComponent:VFC=()=>{
-    return <div>this is songwhip coddmponent</div>
+    const [status,data,]=useSongWhip();
+    if(status ==="loading"){
+        return <Spin/>
+    }
+    if(status==="success"){
+        return <div>{data.url}<br/><Button icon={<CopyOutlined />} onClick={()=>{
+            navigator.clipboard.writeText(data.url);
+        }}/></div>
+    }
+    
+    return <div>if the url is Spotify URL , Url will occur here.</div>
 }
 
 export default SongWhipComponent;
