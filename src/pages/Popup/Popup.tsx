@@ -3,7 +3,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import React, { useState, VFC } from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
-import icon from '../../assets/img/songwhip-icon.png';
+import icon from '../../assets/img/icon-128.png';
 import './Popup.css';
 import SongWhipComponent from './SongWhipComponent';
 import useSongWhip from './useSongWhip';

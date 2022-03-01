@@ -7,12 +7,13 @@ import useSongWhip from "./useSongWhip";
 
 const SongWhipComponent:VFC=()=>{
     const [status,data,]=useSongWhip();
+    console.log('status is',status);
     if(status ==="loading"){
         return <Spin/>
     }
     if(status==="success"){
-        return <div>{data.url}<br/><Button icon={<CopyOutlined />} onClick={()=>{
-            navigator.clipboard.writeText(data.url);
+        return <div>{data?.url}<br/><Button icon={<CopyOutlined />} onClick={()=>{
+            navigator.clipboard.writeText(data?.url);
         }}/></div>
     }
     
