@@ -1,17 +1,13 @@
 {
   "manifest_version": 3,
   "name": "songwhip-extension",
-  "description": "A chrome extension boilerplate built with React 17, Webpack 5, and Webpack Dev Server 4",
-  "options_page": "options.html",
+  "description": "Songwhip Chrome extension",
   "permissions":["clipboardRead","clipboardWrite"],
   "background": { "service_worker": "background.bundle.js" },
   "action": {
     "default_popup": "popup.html"
   },
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  },
-  "icons": {
+    "icons": {
     "128": "icon-128.png"
   },
   "content_scripts": [
